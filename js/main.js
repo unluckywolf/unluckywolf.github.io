@@ -80,13 +80,14 @@
 		const nextArrow = document.querySelector("#aw-testimonials-next");
 		const testimonials = document.querySelector(".aw-testimonials ul");
 		
-		document.addEventListener("click", () => {
+		document.addEventListener("click", e => {
+			var evt = e || window.event;
 			
-			if(event.target === prevArrow){
+			if(e.target === prevArrow){
 				lastChild = testimonials.lastElementChild;
 				testimonials.insertAdjacentElement("afterbegin", lastChild);
 				
-			}else if(event.target === nextArrow){
+			}else if(e.target === nextArrow){
 				firstChild = testimonials.firstElementChild;
 				testimonials.insertAdjacentElement("beforeend", firstChild);
 			}
